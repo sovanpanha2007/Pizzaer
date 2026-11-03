@@ -128,7 +128,7 @@ Order of houses is mixed on purpose, so the player walks around the whole town.
 | Person | GitHub | Role | What they do | Files they own |
 |---|---|---|---|---|
 | **Dina** | `dina-seng` | Level builder + integrator + merger | Builds the town map and the `Env_` prefabs. Puts everyone's prefabs into `Town.unity`. Reviews and merges **every** PR. Makes the final Windows build. | `Town.unity`, `Env_` prefabs, `Models/`, `Materials/`, `ProjectSettings/`, `Packages/` |
-| **Viset** | `VorngViseth` | Script builder (gameplay) | Player (Starter Assets), `InteractZone`, `TargetMarker`, `MainMenu.cs`, `AudioManager`. Builds the player, zone, marker, and NPC prefabs. | `Scripts/Gameplay/`, `Scripts/Audio/`, `MainMenu.cs`, `Prefabs/Player/`, `Prefabs/Gameplay/` |
+| **Viset** | `lancd` | Script builder (gameplay) | Player (Starter Assets), `InteractZone`, `TargetMarker`, `MainMenu.cs`, `AudioManager`. Builds the player, zone, marker, and NPC prefabs. | `Scripts/Gameplay/`, `Scripts/Audio/`, `MainMenu.cs`, `Prefabs/Player/`, `Prefabs/Gameplay/` |
 | **Panha** (Sue) | `sovanpanha2007` | Team lead + script builder | `DeliveryOrder`, `DeliveryManager`, `UIManager`, win flow, the 5 real orders. Owns the GitHub board and `docs/`. Runs the daily stand-up, cuts scope when we are late, approves Dina's PRs. | `Scripts/Core/`, `UIManager.cs`, `Core_GameManager`, `PLAN.md`, the board |
 | **Soth** | `PSoth911` | UI, art, sound, and writing | HUD, dialogue and win panels, main menu scene, music and sound effects, the story text. | `MainMenu.unity`, `Prefabs/UI/`, `Core_Audio`, `Art/UI/`, `Audio/`, `docs/STORY.md` |
 
