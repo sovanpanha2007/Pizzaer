@@ -36,7 +36,7 @@ Details are in [GITHUB_GUIDE.md](GITHUB_GUIDE.md) and [WORK_RULES.md](WORK_RULES
   git config --global user.email "you@example.com"
   ```
 - [ ] **4. Clone** with GitHub Desktop:
-  - File → Clone repository → `dina-seng/Pizzaer`
+  - File → Clone repository → `sovanpanha2007/Pizzaer`
   - Save it to a short path like `C:\Projects\Pizzaer`, with no spaces and no Khmer letters.
 - [ ] **5. Open in Unity**
   - Unity Hub → Add → Add project from disk → choose the `Pizzaer` folder → open with **6000.3.8f1**.
