@@ -98,7 +98,7 @@ Nobody touches a locked file.
 | Branch | `feature/<issue#>-short-name` or `fix/<issue#>-short-name` | `feature/14-interact-zone`, `fix/31-marker-too-low` |
 | Commit message | `#<issue> Verb + what` | `#14 Add InteractZone trigger logic` |
 | PR title | `#<issue> Issue title` | `#14 InteractZone script + zone prefabs` |
-| PR description | must contain `Closes #<issue>` | `Closes #14` |
+| PR description | must contain `Closes #<issue>` (shared issues: `Part of #<issue>`, see 1.10) | `Closes #14` |
 
 ## 1.7 How to do one issue (every time, same steps)
 
@@ -139,6 +139,19 @@ An issue is **done** only when all of these are true:
 - [ ] Screenshot or GIF in the PR
 - [ ] "How to hook up" notes, if someone else must attach or place it
 - [ ] My **role checklist** (Part 2) is ticked
+
+## 1.10 Shared issues (for the whole team)
+
+A **shared issue** is one issue that **every person** must do, not just one owner. We have three: **A3** (onboarding), **G1** (Playtest #1), **G2** (Bug fix day).
+
+How they are different from normal issues:
+
+- **Assigned to all 4 people.** The issue body has one checkbox per person (`- [ ] Dina`, `- [ ] Viset`, `- [ ] Panha`, `- [ ] Soth`). Tick **only your own** line when your part is done.
+- **One issue, but one branch + one PR per person** (when the issue needs a PR). Example for A3: `feature/<n>-sandbox-<yourname>`.
+- **Write `Part of #<issue>` in your PR, not `Closes #<issue>`.** Otherwise the first merged PR would close the issue for everybody.
+- **Panha closes it** when all 4 checkboxes are ticked. One board card; it stays In Progress until then.
+- **G1 (Playtest #1):** no PR. Play the game twice, and make a `bug` issue for every problem (steps + screenshot).
+- **G2 (Bug fix day):** no PR on G2 itself. Fix your own `bug` issues, and use `Closes #<bug issue>` in those PRs.
 
 ---
 
