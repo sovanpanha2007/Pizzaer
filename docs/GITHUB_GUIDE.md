@@ -1,6 +1,6 @@
 # Pizzaer — GitHub Guide (step by step)
 
-Repo: **https://github.com/dina-seng/Pizzaer** (owner: Dina)
+Repo: **https://github.com/sovanpanha2007/Pizzaer** (owner: Panha)
 
 New words:
 - **Git LFS** (Large File Storage) — keeps big files (models, images, sounds) outside normal Git, so the repo stays fast.
@@ -31,7 +31,7 @@ What is wrong ⚠️: Git LFS was **not on** when the first commit was made (1 P
 
 1. **Dina:** repo → **Settings → Collaborators → Add people** → add Viset, Panha, Soth (role: Write).
 2. Everyone accepts the email invite.
-3. GitHub Desktop → **File → Clone repository** → `dina-seng/Pizzaer` → choose a short path like `C:\Projects\Pizzaer` (no spaces or Khmer letters in the path).
+3. GitHub Desktop → **File → Clone repository** → `sovanpanha2007/Pizzaer` → choose a short path like `C:\Projects\Pizzaer` (no spaces or Khmer letters in the path).
 4. Unity Hub → **Add → Add project from disk** → choose the `Pizzaer` folder → open with 6000.3.8f1.
 
 ## Step 2 — Fix Git LFS (Dina only, once, on Day 1)
@@ -135,7 +135,7 @@ Repo → **Issues → Milestones → New milestone**:
 **Optional (faster): create issues with the GitHub CLI**
 
 ```bash
-gh issue create --repo dina-seng/Pizzaer \
+gh issue create --repo sovanpanha2007/Pizzaer \
   --title "B2 · Town layout (block-out)" \
   --body-file issue_B2.md \
   --assignee DINA_GITHUB_USERNAME \

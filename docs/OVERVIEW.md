@@ -1,6 +1,6 @@
 # Pizzaer — Game Overview
 
-> Team: **Dina** (level builder, integrator, merges), **Viset** (scripts), **Panha** (scripts, team lead), **Soth** (UI, art, sound, writing)
+> Team: **Dina** (level builder, integrator, merges), **Viset** (scripts), **Panha** (scripts, team lead), **Soth** (UI, art, sound, writing) — details in [§9](#9-team-and-roles)
 > Engine: **Unity 6.3 (6000.3.8f1)**, URP, PC
 > Deadline: **Tue, Nov 10, 2026** — must be playable in Unity
 
@@ -122,3 +122,16 @@ Order of houses is mixed on purpose, so the player walks around the whole town.
 - A big open city
 
 **Why so small?** We are 4 beginners with 7 days. A small game that works is much better than a big game that is broken on demo day. If we finish early, we add nice-to-haves, one at a time.
+
+## 9. Team and roles
+
+| Person | GitHub | Role | What they do | Files they own |
+|---|---|---|---|---|
+| **Dina** | `dina-seng` | Level builder + integrator + merger | Builds the town map and the `Env_` prefabs. Puts everyone's prefabs into `Town.unity`. Reviews and merges **every** PR. Makes the final Windows build. | `Town.unity`, `Env_` prefabs, `Models/`, `Materials/`, `ProjectSettings/`, `Packages/` |
+| **Viset** | `lancd` | Script builder (gameplay) | Player (Starter Assets), `InteractZone`, `TargetMarker`, `MainMenu.cs`, `AudioManager`. Builds the player, zone, marker, and NPC prefabs. | `Scripts/Gameplay/`, `Scripts/Audio/`, `MainMenu.cs`, `Prefabs/Player/`, `Prefabs/Gameplay/` |
+| **Panha** (Sue) | `sovanpanha2007` | Team lead + script builder | `DeliveryOrder`, `DeliveryManager`, `UIManager`, win flow, the 5 real orders. Owns the GitHub board and `docs/`. Runs the daily stand-up, cuts scope when we are late, approves Dina's PRs. | `Scripts/Core/`, `UIManager.cs`, `Core_GameManager`, `PLAN.md`, the board |
+| **Soth** | `PSoth911` | UI, art, sound, and writing | HUD, dialogue and win panels, main menu scene, music and sound effects, the story text. | `MainMenu.unity`, `Prefabs/UI/`, `Core_Audio`, `Art/UI/`, `Audio/`, `docs/STORY.md` |
+
+- **Everyone** does the team issues: onboarding (A3), Playtest #1 (G1), and Bug fix day (G2). See [WORK_RULES.md §1.10](WORK_RULES.md#110-shared-issues-for-the-whole-team).
+- The full ownership table is in [WORK_RULES.md §1.5](WORK_RULES.md). Each role's checklist is in WORK_RULES.md Part 2.
+- Every issue and who does it: [PLAN.md](PLAN.md).
