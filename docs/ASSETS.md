@@ -18,8 +18,7 @@ License words:
 
 | Asset | Use | Link | License | Notes |
 |---|---|---|---|---|
-| **Starter Assets: Character Controllers \| URP** (Unity) | Third-person player: walk, run, jump, camera | https://assetstore.unity.com/packages/slug/267961 | Unity Companion License | Made for Unity 6 LTS and URP. Needs Cinemachine + Input System (installed automatically). Use the **Third Person** part. Owner: Viset (C1). |
-| Starter Assets – Third Person (older, single pack) | Backup if the URP pack has problems | https://assetstore.unity.com/packages/slug/196526 | Unity Companion License | May need URP material conversion. |
+| **Food Worker** by J-Toastie | Third-person player character | https://poly.pizza/m/6cjgeTS8Pl | CC-BY 3.0 | Via Poly Pizza. Attribution: https://creativecommons.org/licenses/by/3.0/ |
 
 **How to get Asset Store packs:** open the link → **Add to My Assets** → in Unity: **Window → Package Management → Package Manager → My Assets** → find the pack → **Download → Import**.
 
@@ -92,6 +91,6 @@ Suggested picks (Soth checks them by ear):
 ```
 Pizzaer — made by Dina, Viset, Panha, Soth
 3D models, UI and sounds: Kenney (www.kenney.nl) — CC0
+Player character: "Food Worker" by J-Toastie (https://poly.pizza/m/6cjgeTS8Pl) — CC-BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
 Music: "Two Simple Game Music Loops" by qubodup (OpenGameArt) — CC0
-Player controller: Unity Starter Assets — Unity Companion License
 ```
