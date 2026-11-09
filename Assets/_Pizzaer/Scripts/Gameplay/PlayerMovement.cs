@@ -13,6 +13,8 @@ using UnityEngine.InputSystem;
 // Requirements:
 //   - A CharacterController on the same GameObject (added automatically).
 //   - A Camera assigned to `cam` (or left null -> it uses Camera.main).
+//   - An Animator (on this object or a child, e.g. FoodWorker) with the
+//     parameters:  Speed (Float), IsGrounded (Bool), Jump (Trigger)
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -36,6 +38,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     public Camera cam;                   // the camera used for movement direction (optional)
 
+    [Header("Animation")]
+    public Animator animator;            // the Animator on the model (auto-found if left empty)
+    public float speedDampTime = 0.1f;   // smoothing for the Speed parameter
+
+    // Cached Animator parameter IDs (faster than using strings every frame).
+    static readonly int SpeedHash      = Animator.StringToHash("Speed");
+    static readonly int IsGroundedHash = Animator.StringToHash("IsGrounded");
+    static readonly int JumpHash       = Animator.StringToHash("Jump");
+
     CharacterController controller;      // Unity's built-in movement collider
     Vector3 velocity;                    // current vertical speed (gravity/jump)
 
@@ -47,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         if (cam == null) cam = Camera.main;
+        if (animator == null) animator = GetComponentInChildren<Animator>();
 
         // Start these far in the past so there is no accidental first-frame jump.
         lastGroundedTime = -999f;
@@ -84,10 +96,12 @@ public class PlayerMovement : MonoBehaviour
             dir = new Vector3(move.x, 0f, move.y);
         }
 
-        // Apply horizontal movement + rotate the body to face where it's going.
-        if (move.sqrMagnitude > 0.01f)
+        // Horizontal movement + rotate the body to face where it's going.
+        bool isMoving = move.sqrMagnitude > 0.01f && dir.sqrMagnitude > 0.0001f;
+        Vector3 horizontalMove = Vector3.zero;
+        if (isMoving)
         {
-            controller.Move(dir * speed * Time.deltaTime);
+            horizontalMove = dir * speed;
             Quaternion target = Quaternion.LookRotation(dir);
             transform.rotation = Quaternion.Slerp(transform.rotation, target, rotationSpeed * Time.deltaTime);
         }
@@ -114,11 +128,23 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             lastGroundedTime    = -999f; // consume the coyote window (no double jump)
             lastJumpPressedTime = -999f; // consume the buffered press
+
+            if (animator != null) animator.SetTrigger(JumpHash);
         }
 
-        // Apply gravity and move vertically.
+        // Apply gravity, then move horizontally + vertically in a single call.
         velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        Vector3 finalMove = (horizontalMove + new Vector3(0f, velocity.y, 0f)) * Time.deltaTime;
+        controller.Move(finalMove);
+
+        // ---- Animation ----
+        if (animator != null)
+        {
+            // Horizontal speed in m/s: 0 when idle, walkSpeed or runSpeed when moving.
+            float currentSpeed = isMoving ? speed * move.magnitude : 0f;
+            animator.SetFloat(SpeedHash, currentSpeed, speedDampTime, Time.deltaTime);
+            animator.SetBool(IsGroundedHash, isGrounded);
+        }
     }
 
     // Casts a small sphere downward from the body center to detect ground.
