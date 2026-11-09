@@ -21,6 +21,7 @@ public class DeliveryManager : MonoBehaviour
     TargetMarker marker;
     InteractZone shop;
     Dictionary<int, InteractZone> houses = new Dictionary<int, InteractZone>();
+    bool ready;
 
     void Awake()
     {
@@ -35,8 +36,16 @@ public class DeliveryManager : MonoBehaviour
         // Find the shop and all houses in the scene.
         foreach (InteractZone zone in FindObjectsByType<InteractZone>(FindObjectsSortMode.None))
         {
-            if (zone.zoneType == ZoneType.Shop) shop = zone;
-            else houses[zone.houseNumber] = zone;
+            if (zone.zoneType == ZoneType.Shop)
+            {
+                if (shop != null) Debug.LogWarning("[Delivery] More than one shop zone in the scene. Using " + zone.name + ".");
+                shop = zone;
+            }
+            else
+            {
+                if (houses.ContainsKey(zone.houseNumber)) Debug.LogWarning("[Delivery] Two houses share number " + zone.houseNumber + ".");
+                houses[zone.houseNumber] = zone;
+            }
         }
 
         if (shop == null || ui == null || marker == null)
@@ -45,6 +54,13 @@ public class DeliveryManager : MonoBehaviour
             return;
         }
 
+        if (orders.Count == 0)
+        {
+            Debug.LogError("[Delivery] The orders list is empty. Add orders on Core_GameManager!");
+            return;
+        }
+
+        ready = true;
         ui.SetMoney(money);
         ui.SetOrder("Go to the Pizza Shop to get your first order.");
         marker.MoveTo(shop.transform);
@@ -53,18 +69,21 @@ public class DeliveryManager : MonoBehaviour
     // Called by InteractZone when the player walks in.
     public void PlayerEntered(InteractZone zone)
     {
+        if (!ready) return;
         ui.ShowPrompt(true);
     }
 
     // Called by InteractZone when the player walks out.
     public void PlayerLeft(InteractZone zone)
     {
+        if (!ready) return;
         ui.ShowPrompt(false);
     }
 
     // Called by InteractZone when the player presses E inside a zone.
     public void Interact(InteractZone zone)
     {
+        if (!ready) return;
         if (currentIndex >= orders.Count) return; // game already finished
 
         DeliveryOrder order = orders[currentIndex];
