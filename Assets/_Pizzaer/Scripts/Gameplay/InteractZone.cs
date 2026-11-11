@@ -18,14 +18,16 @@ public class InteractZone : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         playerInside = true;
-        DeliveryManager.Instance.PlayerEntered(this);
+        Debug.Log("[Zone] Player entered " + zoneType + " zone.");
+        if (DeliveryManager.Instance != null) DeliveryManager.Instance.PlayerEntered(this);
     }
 
     void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
         playerInside = false;
-        DeliveryManager.Instance.PlayerLeft(this);
+        Debug.Log("[Zone] Player left " + zoneType + " zone.");
+        if (DeliveryManager.Instance != null) DeliveryManager.Instance.PlayerLeft(this);
     }
 
     void Update()
@@ -35,7 +37,8 @@ public class InteractZone : MonoBehaviour
 
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            DeliveryManager.Instance.Interact(this);
+            Debug.Log("[Zone] E pressed in " + zoneType + " zone.");
+            if (DeliveryManager.Instance != null) DeliveryManager.Instance.Interact(this);
         }
     }
 }
