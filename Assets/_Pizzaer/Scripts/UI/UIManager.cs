@@ -78,6 +78,18 @@ public class UIManager : MonoBehaviour
         SetActiveSafe(dialoguePanel, false);
     }
 
+    // Button: Hide Dialogue
+    public void HideDialogue()
+    {
+        if (hideRoutine != null)
+        {
+            StopCoroutine(hideRoutine);
+            hideRoutine = null;
+        }
+
+        SetActiveSafe(dialoguePanel, false);
+    }
+
     public void ShowWin(int totalMoney)
     {
         SetTextSafe(winMoneyText, "Shop saved! You earned $" + totalMoney + "!");
