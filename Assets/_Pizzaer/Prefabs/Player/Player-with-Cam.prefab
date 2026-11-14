@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3426606050573487499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6092322328062187755}
+  m_Layer: 0
+  m_Name: PizaHoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6092322328062187755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3426606050573487499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.99, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6208211633946595985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8659962024759152813
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +451,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2513106536502434633, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.00801
+      value: -25.9
       objectReference: {fileID: 0}
     - target: {fileID: 2513106536502434633, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -428,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2513106536502434633, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.14625
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 2513106536502434633, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -460,7 +491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3002645003903222259, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
       propertyPath: m_Name
-      value: FoodWorker Variant
+      value: Player-with-Cam
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002645003903222259, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -471,6 +506,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2513106536502434633, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1915325880665315643}
+    - targetCorrespondingSourceObject: {fileID: 2513106536502434633, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6092322328062187755}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3df850d2ac76708aeb6fab4f960b2f35, type: 3}
 --- !u!4 &6208211633946595985 stripped
