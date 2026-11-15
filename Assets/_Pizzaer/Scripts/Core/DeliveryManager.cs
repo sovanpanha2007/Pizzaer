@@ -93,10 +93,12 @@ public class DeliveryManager : MonoBehaviour
             if (hasPizza)
             {
                 ui.ShowDialogue(chefName, "You already have a pizza. Go deliver it!");
+                PlaySound(Sfx.Wrong);
                 return;
             }
 
             hasPizza = true;
+            PlaySound(Sfx.Pickup);
             ui.ShowDialogue(chefName, "Go to House #" + order.houseNumber + " to deliver a " + order.pizzaName + " pizza!");
             ui.SetOrder("Deliver " + order.pizzaName + " pizza to House #" + order.houseNumber);
 
@@ -110,6 +112,7 @@ public class DeliveryManager : MonoBehaviour
             if (!hasPizza || zone.houseNumber != order.houseNumber)
             {
                 ui.ShowDialogue("House #" + zone.houseNumber, "Sorry, I didn't order pizza.");
+                PlaySound(Sfx.Wrong);
                 return;
             }
 
@@ -121,14 +124,47 @@ public class DeliveryManager : MonoBehaviour
 
             if (currentIndex >= orders.Count)
             {
+                PlaySound(Sfx.Win); // the win sound replaces the deliver sound
                 marker.Hide();
                 ui.ShowWin(money);
             }
             else
             {
+                PlaySound(Sfx.Deliver);
                 ui.SetOrder("Go back to the Pizza Shop for the next order.");
                 marker.MoveTo(shop.transform);
             }
         }
+    }
+
+    enum Sfx { Pickup, Deliver, Wrong, Win }
+
+    // Plays one sound effect. Works without errors when Core_Audio is not in the scene.
+    void PlaySound(Sfx sound)
+    {
+        AudioManager audioManager = AudioManager.Instance;
+        if (audioManager == null)
+        {
+            Debug.Log("[Audio] " + sound + " (no Core_Audio in the scene, no sound)");
+            return;
+        }
+
+        if (audioManager.sfxSource == null)
+        {
+            Debug.LogWarning("[Audio] " + sound + ": the SFX Source on Core_Audio is not set.");
+            return;
+        }
+
+        AudioClip clip = null;
+        switch (sound)
+        {
+            case Sfx.Pickup: clip = audioManager.pickupClip; break;
+            case Sfx.Deliver: clip = audioManager.deliverClip; break;
+            case Sfx.Wrong: clip = audioManager.wrongClip; break;
+            case Sfx.Win: clip = audioManager.winClip; break;
+        }
+
+        Debug.Log("[Audio] " + sound + (clip == null ? " (no clip set, no sound)" : ""));
+        audioManager.Play(clip);
     }
 }
