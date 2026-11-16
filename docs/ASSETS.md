@@ -84,6 +84,7 @@ Suggested picks (Soth checks them by ear):
 | Asset pack | Files used | Where in project | License | Added by | Date |
 |---|---|---|---|---|---|
 | *example:* Kenney City Kit (Roads) | road-straight, road-crossroad, road-bend… | `_Pizzaer/Models/CityRoads/` | CC0 | Dina | Nov 4 |
+| Map Marker by Chris Ross (Poly Pizza) | Target marker above the next delivery place | `_Pizzaer/Models/` (marker model) | CC-BY 3.0 | Team | |
 | | | | | | |
 
 ## Credits (copy into README and the game)
@@ -92,5 +93,6 @@ Suggested picks (Soth checks them by ear):
 Pizzaer — made by Dina, Viset, Panha, Soth
 3D models, UI and sounds: Kenney (www.kenney.nl) — CC0
 Player character: "Food Worker" by J-Toastie (https://poly.pizza/m/6cjgeTS8Pl) — CC-BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+Target marker: "Map Marker" by Chris Ross (https://poly.pizza/m/6ij4nru_NPh) — CC-BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
 Music: "Two Simple Game Music Loops" by qubodup (OpenGameArt) — CC0
 ```
