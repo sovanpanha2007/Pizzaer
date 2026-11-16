@@ -92,7 +92,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowWin(int totalMoney)
     {
-        SetTextSafe(winMoneyText, "Shop saved! You earned $" + totalMoney + "!");
+        SetTextSafe(winMoneyText, "Great job! You delivered all five pizzas and saved Grandpa Lim's Pizza Shop!\nYou earned $" + totalMoney + "!");
         SetActiveSafe(promptPanel, false);
         SetActiveSafe(winPanel, true);
 
