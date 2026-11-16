@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3011910148200026039}
+  - component: {fileID: 9047391542367938008}
+  - component: {fileID: 4219290077032924221}
   m_Layer: 0
   m_Name: Pizza
-  m_TagString: Untagged
+  m_TagString: pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,13 +28,46 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 954579341092369833}
   - {fileID: 899298716128299089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9047391542367938008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932822923236146729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94da882b738ad32f8a3bf85c5277699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PizzaPickUp
+--- !u!65 &4219290077032924221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932822923236146729}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!1001 &771771018959245890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55,15 +90,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 082c7b897ca95a240aced3158b4209ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.654
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 082c7b897ca95a240aced3158b4209ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.025
+      value: 0.009
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 082c7b897ca95a240aced3158b4209ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.849
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 082c7b897ca95a240aced3158b4209ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -121,27 +156,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fe321ef85b33a91488aacd5b16f439f6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe321ef85b33a91488aacd5b16f439f6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe321ef85b33a91488aacd5b16f439f6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe321ef85b33a91488aacd5b16f439f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe321ef85b33a91488aacd5b16f439f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.951
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe321ef85b33a91488aacd5b16f439f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.86
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe321ef85b33a91488aacd5b16f439f6, type: 3}
       propertyPath: m_LocalRotation.w
