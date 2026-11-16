@@ -226,4 +226,6 @@ The project was developed collaboratively with clear separation of ownership acr
 
 ### 4. Gameplay Demo Video
 A recorded demonstration of the complete gameplay loop is located at:
-- `install/demo/PizznerGamePlay.mp4`
+- `install/demo/PizznerGamePlay.mp4` 
+
+Google Drive Demonstration Video: https://drive.google.com/file/d/12qnA9KUoWsw21ieyH_9MScg-a5WfcdJF/view
