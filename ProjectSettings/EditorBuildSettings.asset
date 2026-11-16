@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Pizzaer/Scenes/MainMenu.unity
+    path: Assets/_Pizzaer/Scenes/GameMenu.unity
+    guid: 2036446f97c1d3145bda49ca674fd679
+  - enabled: 1
+    path: Assets/_Pizzaer/Scenes/Main.unity
     guid: 9f7af8cae97a3c5439345356484f5af9
   - enabled: 1
     path: Assets/_Pizzaer/Scenes/Town.unity
